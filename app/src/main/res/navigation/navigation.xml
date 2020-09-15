@@ -3,18 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/verizonFragment">
+    tools:context = ".navigation"
+    app:startDestination="@id/nextFragment">
     <fragment
-        android:id="@+id/verizonFragment"
-        android:name="com.anthonyh.cellprojectfirebase.fragment.VerizonFragment"
-        android:label="VerizonFragment" >
-        <action
-            android:id="@+id/action_verizonFragment_to_mainActivity"
-            app:destination="@id/mainActivity" />
-    </fragment>
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.anthonyh.cellprojectfirebase.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+        android:id="@+id/nextFragment"
+        android:name="com.anthonyh.cellprojectfirebase.fragment.NextFragment"
+        android:label="fragment_next"
+        tools:layout="@layout/fragment_next" />
 </navigation>

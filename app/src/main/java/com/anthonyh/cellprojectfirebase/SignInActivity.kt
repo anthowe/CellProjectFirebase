@@ -38,6 +38,7 @@ class SignInActivity: BaseActivity(), View.OnClickListener {
         }
     }
 
+
     public override fun onStart() {
         super.onStart()
 
@@ -65,11 +66,13 @@ class SignInActivity: BaseActivity(), View.OnClickListener {
                 if (task.isSuccessful) {
                     onAuthSuccess(task.result?.user!!)
                 } else {
-                    Toast.makeText(baseContext, "Sign In Failed",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext, "Sign In Failed",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
-        Log.e("message", "NextActivity")
+
     }
 
     private fun signUp() {
@@ -90,8 +93,10 @@ class SignInActivity: BaseActivity(), View.OnClickListener {
                 if (task.isSuccessful) {
                     onAuthSuccess(task.result?.user!!)
                 } else {
-                    Toast.makeText(baseContext, "Sign Up Failed",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext, "Sign Up Failed",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
@@ -103,7 +108,8 @@ class SignInActivity: BaseActivity(), View.OnClickListener {
         writeNewUser(user.uid, username, user.email)
 
         // Go to MainActivity
-        startActivity(Intent(this@SignInActivity, NextActivity::class.java))
+        startActivity(Intent(this, NextActivity::class.java))
+        Log.e("message", "NextActivity")
         finish()
     }
 
