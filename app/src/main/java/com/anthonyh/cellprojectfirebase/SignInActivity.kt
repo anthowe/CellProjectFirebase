@@ -108,7 +108,7 @@ class SignInActivity: BaseActivity(), View.OnClickListener {
         writeNewUser(user.uid, username, user.email)
 
         // Go to MainActivity
-        startActivity(Intent(this, NextActivity::class.java))
+        startActivity(Intent(this, FirstActivity::class.java))
         Log.e("message", "NextActivity")
         finish()
     }

@@ -7,6 +7,9 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import com.anthonyh.cellprojectfirebase.databinding.ActivityMainBinding
+import com.anthonyh.cellprojectfirebase.fragment.FirstFragment
+import com.anthonyh.cellprojectfirebase.fragment.SecondFragment
+import com.anthonyh.cellprojectfirebase.fragment.ThirdFragment
 import com.anthonyh.cellprojectfirebase.fragment.VerizonFragment
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
@@ -25,19 +28,22 @@ class MainActivity : BaseActivity() {
        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+//TODO: Fragment array must be same length as fragmentNames array
         pagerAdapter = object : FragmentPagerAdapter(supportFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             private val fragments = arrayOf(
+               FirstFragment(),
+                 SecondFragment(),
+                 ThirdFragment(),
                 VerizonFragment()
-//                    RecentPostsFragment(),
-//                    MyPostsFragment(),
-//                    MyTopPostsFragment()
+
             )
 
             private val fragmentNames = arrayOf(
 
-                "Recent"
-//                    getString(R.string.heading_my_posts),
+                "Recent",
+                 "Less Recent",
+                "More Recent",
+                "More or less Recent"
 //                    getString(R.string.heading_my_top_posts)
             )
             override fun getItem(position: Int): Fragment {
