@@ -25,49 +25,47 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         FirebaseApp.initializeApp(this)
-       binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 //TODO: Fragment array must be same length as fragmentNames array
-        pagerAdapter = object : FragmentPagerAdapter(supportFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
-            private val fragments = arrayOf(
-               FirstFragment(),
-                 SecondFragment(),
-                 ThirdFragment(),
-                VerizonFragment()
+//        pagerAdapter = object : FragmentPagerAdapter(supportFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+//            private val fragments = arrayOf(
+//
+//                VerizonFragment()
+//
+//            )
+//
+//            private val fragmentNames = arrayOf(
+//
+//               " "
+////                 "Less Recent",
+////                "More Recent",
+////                "More or less Recent"
+////                    getString(R.string.heading_my_top_posts)
+//            )
+//            override fun getItem(position: Int): Fragment {
+//                return fragments[position]
+//            }
+//
+//            override fun getCount() = fragments.size
+//
+//            override fun getPageTitle(position: Int): CharSequence? {
+//                return fragmentNames[position]
+//            }
+//    }
+//        // Set up the ViewPager with the sections adapter.
+//        with(binding) {
+//            container.adapter = pagerAdapter
+//
+//            tabs.setupWithViewPager(container)
 
-            )
-
-            private val fragmentNames = arrayOf(
-
-                "Recent",
-                 "Less Recent",
-                "More Recent",
-                "More or less Recent"
-//                    getString(R.string.heading_my_top_posts)
-            )
-            override fun getItem(position: Int): Fragment {
-                return fragments[position]
-            }
-
-            override fun getCount() = fragments.size
-
-            override fun getPageTitle(position: Int): CharSequence? {
-                return fragmentNames[position]
-            }
-    }
-        // Set up the ViewPager with the sections adapter.
-        with(binding) {
-            container.adapter = pagerAdapter
-
-            tabs.setupWithViewPager(container)
-
-//            // Button launches NewPostActivity
+            // Button launches NewPostActivity
 //            fabNewPost.setOnClickListener {
 //                startActivity(Intent(this@MainActivity, SignInActivity::class.java))
 //            }
-        }
-}
+  }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
@@ -84,4 +82,4 @@ class MainActivity : BaseActivity() {
         }
     }
 
-}
+    }
