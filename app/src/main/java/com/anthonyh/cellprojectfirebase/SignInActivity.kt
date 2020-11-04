@@ -29,7 +29,7 @@ class SignInActivity: BaseActivity(), View.OnClickListener {
         database = Firebase.database.reference
         auth = Firebase.auth
 
-        setProgressBar(R.id.progressBar)
+       // setProgressBar(R.id.progressBar)
 
         // Click listeners
         with(binding) {
